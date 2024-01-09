@@ -2,7 +2,7 @@
 
 ## Wprowadzenie
 
-Witaj w repozytorium z materiałami do szkolenia ** Entity Framework Core 8**.
+Witaj w repozytorium z materiałami do szkolenia **Entity Framework Core 8**.
 
 Do rozpoczęcia tego kursu potrzebujesz następujących rzeczy:
 
