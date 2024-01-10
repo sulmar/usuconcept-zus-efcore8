@@ -2,7 +2,7 @@
 
 ## Wprowadzenie
 
-Witaj w repozytorium z materiałami do szkolenia ** Entity Framework Core 8**.
+Witaj w repozytorium z materiałami do szkolenia **Entity Framework Core 8**.
 
 Do rozpoczęcia tego kursu potrzebujesz następujących rzeczy:
 
@@ -44,7 +44,7 @@ sqlcmd -S (localdb)\MSSQLLocalDB -d sakila -E -i sql-server-sakila-insert-data.s
 - ``` dotnet sln remove {folder}``` - usunięcie projektu z folderu z rozwiązania
 - ``` dotnet sln add {project.csproj}``` - dodanie projektu do rozwiązania
 - ``` dotnet sln remove {project.csproj}``` - usunięcie projektu z rozwiązania
-- 
+
 #### Projekt
 - ``` dotnet new --list ``` - wyświetlenie listy dostępnych szablonów
 - ``` dotnet new {template} ``` - utworzenie nowego projektu na podstawie wybranego szablonu, np. console, web
