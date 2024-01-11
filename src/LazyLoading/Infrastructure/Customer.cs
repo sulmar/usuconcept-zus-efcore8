@@ -23,7 +23,7 @@ public partial class Customer
 
     public DateTime LastUpdate { get; set; }
 
-    public virtual Address Address { get; set; } = null!;
+  
 
     public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
 
