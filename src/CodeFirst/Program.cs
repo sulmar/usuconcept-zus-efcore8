@@ -11,11 +11,21 @@ var options = new DbContextOptionsBuilder<ApplicationDbContext>()
 
 var context = new ApplicationDbContext(options);
 
-var dbCreated = context.Database.EnsureCreated();
+// var dbCreated = context.Database.EnsureCreated(); // uwaga: nie można później używać migracji
 
-if (dbCreated)
-{
-    Console.WriteLine("Databased created.");
-}
+//if (dbCreated)
+//{
+//    Console.WriteLine("Databased created.");
+//}
+
+// dotnet tool install --global dotnet-ef --version 8.0.0
+
+// dotnet add package Microsoft.EntityFrameworkCore.Design 
+
+context.Database.Migrate();
 
 
+var products = context.Products.OrderBy(p => p.Weight).ToList();
+
+
+Console.WriteLine(products);

@@ -12,6 +12,8 @@ public class Product
     public ProductSize? Size { get; set; }
     public string? Color { get; set; }
     public decimal Price { get; set; }
+    public float? Weight { get; set; }
+    public decimal Discount { get; set; }
     public ICollection<Category> Categories { get; set; } = new List<Category>();
     public override string ToString() => $"{Name} {Description} {Barcode} {Price:C2}";
 }
