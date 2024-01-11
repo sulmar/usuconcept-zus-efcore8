@@ -1,10 +1,17 @@
 ﻿using Infrastructure;
+using Microsoft.EntityFrameworkCore;
 
 Console.WriteLine("Hello, Global Filters!");
 
 using var context = new SakilaContext();
 
 // TODO: Move to global filters
-var customers = context.Customers.Where(c=>c.Active == "1").ToList();
+var activeCustomers = context.Customers    
+    .ToList();
 
-customers.Dump();
+activeCustomers.Dump();
+
+
+var allCustomers = context.Customers.IgnoreQueryFilters().ToList();
+
+allCustomers.Dump();

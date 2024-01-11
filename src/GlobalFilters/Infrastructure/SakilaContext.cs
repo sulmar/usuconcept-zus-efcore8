@@ -64,6 +64,10 @@ public partial class SakilaContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Customer>()
+            .HasQueryFilter(p => p.Active == "1");
+
+
         modelBuilder.Entity<Actor>(entity =>
         {
             entity.HasKey(e => e.ActorId)
