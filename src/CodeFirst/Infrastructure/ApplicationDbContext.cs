@@ -31,6 +31,12 @@ internal class ApplicationDbContext : DbContext
             .ApplyConfiguration(new CustomerConfiguration())
             .ApplyConfiguration(new ProductConfiguration());
 
+        // Wyłączenie encji z migracji
+        modelBuilder
+            .Entity<Award>()
+            .ToTable("Awards", t => t.ExcludeFromMigrations());
+
+
 
         // modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
