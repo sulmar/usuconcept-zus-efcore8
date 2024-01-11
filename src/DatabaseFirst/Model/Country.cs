@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Sakila.Domain.Model;
 
@@ -11,5 +12,5 @@ public partial class Country
 
     public DateTime? LastUpdate { get; set; }
 
-    public virtual ICollection<City> Cities { get; set; } = new List<City>();
+    public ObservableCollection<City> Cities { get; set; } = new ObservableCollection<City>();
 }

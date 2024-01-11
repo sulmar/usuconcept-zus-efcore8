@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Sakila.Domain.Model;
 
@@ -13,5 +14,5 @@ public partial class Actor
 
     public DateTime LastUpdate { get; set; }
 
-    public virtual ICollection<FilmActor> FilmActors { get; set; } = new List<FilmActor>();
+    public ObservableCollection<FilmActor> FilmActors { get; set; } = new ObservableCollection<FilmActor>();
 }

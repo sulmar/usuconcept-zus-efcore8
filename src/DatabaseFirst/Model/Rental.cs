@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Sakila.Domain.Model;
 
@@ -19,11 +20,11 @@ public partial class Rental
 
     public DateTime LastUpdate { get; set; }
 
-    public virtual Customer Customer { get; set; } = null!;
+    public Customer Customer { get; set; } = null!;
 
-    public virtual Inventory Inventory { get; set; } = null!;
+    public Inventory Inventory { get; set; } = null!;
 
-    public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
+    public ObservableCollection<Payment> Payments { get; set; } = new ObservableCollection<Payment>();
 
-    public virtual Staff Staff { get; set; } = null!;
+    public Staff Staff { get; set; } = null!;
 }

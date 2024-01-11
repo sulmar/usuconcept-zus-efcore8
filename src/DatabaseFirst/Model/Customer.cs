@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Sakila.Domain.Model;
 
@@ -23,11 +24,11 @@ public partial class Customer
 
     public DateTime LastUpdate { get; set; }
 
-    public virtual Address Address { get; set; } = null!;
+    public Address Address { get; set; } = null!;
 
-    public virtual ICollection<Payment> Payments { get; set; } = new List<Payment>();
+    public ObservableCollection<Payment> Payments { get; set; } = new ObservableCollection<Payment>();
 
-    public virtual ICollection<Rental> Rentals { get; set; } = new List<Rental>();
+    public ObservableCollection<Rental> Rentals { get; set; } = new ObservableCollection<Rental>();
 
-    public virtual Store Store { get; set; } = null!;
+    public Store Store { get; set; } = null!;
 }

@@ -16,47 +16,47 @@ public partial class SakilaContext : DbContext
     {
     }
 
-    public virtual DbSet<Actor> Actors { get; set; }
+    public DbSet<Actor> Actors { get; set; }
 
-    public virtual DbSet<Address> Addresses { get; set; }
+    public DbSet<Address> Addresses { get; set; }
 
-    public virtual DbSet<Category> Categories { get; set; }
+    public DbSet<Category> Categories { get; set; }
 
-    public virtual DbSet<City> Cities { get; set; }
+    public DbSet<City> Cities { get; set; }
 
-    public virtual DbSet<Country> Countries { get; set; }
+    public DbSet<Country> Countries { get; set; }
 
-    public virtual DbSet<Customer> Customers { get; set; }
+    public DbSet<Customer> Customers { get; set; }
 
-    public virtual DbSet<CustomerList> CustomerLists { get; set; }
+    public DbSet<CustomerList> CustomerLists { get; set; }
 
-    public virtual DbSet<Film> Films { get; set; }
+    public DbSet<Film> Films { get; set; }
 
-    public virtual DbSet<FilmActor> FilmActors { get; set; }
+    public DbSet<FilmActor> FilmActors { get; set; }
 
-    public virtual DbSet<FilmCategory> FilmCategories { get; set; }
+    public DbSet<FilmCategory> FilmCategories { get; set; }
 
-    public virtual DbSet<FilmList> FilmLists { get; set; }
+    public DbSet<FilmList> FilmLists { get; set; }
 
-    public virtual DbSet<FilmText> FilmTexts { get; set; }
+    public DbSet<FilmText> FilmTexts { get; set; }
 
-    public virtual DbSet<Inventory> Inventories { get; set; }
+    public DbSet<Inventory> Inventories { get; set; }
 
-    public virtual DbSet<Language> Languages { get; set; }
+    public DbSet<Language> Languages { get; set; }
 
-    public virtual DbSet<Payment> Payments { get; set; }
+    public DbSet<Payment> Payments { get; set; }
 
-    public virtual DbSet<Rental> Rentals { get; set; }
+    public DbSet<Rental> Rentals { get; set; }
 
-    public virtual DbSet<SalesByFilmCategory> SalesByFilmCategories { get; set; }
+    public DbSet<SalesByFilmCategory> SalesByFilmCategories { get; set; }
 
-    public virtual DbSet<SalesByStore> SalesByStores { get; set; }
+    public DbSet<SalesByStore> SalesByStores { get; set; }
 
-    public virtual DbSet<Staff> Staff { get; set; }
+    public DbSet<Staff> Staff { get; set; }
 
-    public virtual DbSet<StaffList> StaffLists { get; set; }
+    public DbSet<StaffList> StaffLists { get; set; }
 
-    public virtual DbSet<Store> Stores { get; set; }
+    public DbSet<Store> Stores { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.

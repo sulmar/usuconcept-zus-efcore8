@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Sakila.Domain.Model;
 
@@ -11,7 +12,7 @@ public partial class FilmCategory
 
     public DateTime LastUpdate { get; set; }
 
-    public virtual Category Category { get; set; } = null!;
+    public Category Category { get; set; } = null!;
 
-    public virtual Film Film { get; set; } = null!;
+    public Film Film { get; set; } = null!;
 }
