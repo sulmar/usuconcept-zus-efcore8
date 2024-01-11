@@ -1,7 +1,11 @@
-﻿namespace CodeFirst.Model;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+
+namespace CodeFirst.Model;
 
 public class Product
 {
+    public int ProductId { get; set; }
     public string Name { get; set; }
     public string? Description { get; set; }
     public string Barcode { get; set; }
