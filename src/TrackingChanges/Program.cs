@@ -21,7 +21,7 @@ var customers = context.Customers.AsNoTracking().ToList();
 
 // DisableAutoDetectChanges(context);
 
-var film = context.Inventories.Where(i => i.Film.Title.Contains("ACADEMY")).AsNoTracking().First();
+var inventory = context.Inventories.Where(i => i.Film.Title.Contains("ACADEMY")).AsNoTracking().First();
 var customer =  context.Customers.AsNoTracking().First();
 var stuff = context.Staff.AsNoTracking().First();
 
@@ -33,10 +33,11 @@ var rental = new Rental();
 
 rental.Customer = customer;
 rental.Staff = stuff;
-rental.Inventory = film;
+rental.Inventory = inventory;
 rental.RentalDate = DateTime.Now;
 
 var context2 = new SakilaContext();
+
 
 
 //var entries = context.ChangeTracker.Entries().ToList();
