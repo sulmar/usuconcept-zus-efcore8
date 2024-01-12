@@ -14,5 +14,30 @@ internal class AppDbContext : DbContext
     {
     }
 
-    public DbSet<Attachment> Attachments { get; set; }    
+    public DbSet<Attachment> Attachments { get; set; }
+
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<DetailedAttachment>(
+            detailAttachment =>
+            {
+                detailAttachment.ToTable("Attachments");
+                detailAttachment.Property(p => p.ContentType).HasColumnName(nameof(Attachment.ContentType));
+            }
+        );
+
+        modelBuilder.Entity<Attachment>(
+            attachment =>
+            {
+                attachment.ToTable("Attachments");
+                attachment.Property(p => p.ContentType).HasColumnName(nameof(Attachment.ContentType));
+
+                attachment.HasOne(options => options.DetailedAttachment).WithOne()
+                    .HasForeignKey<DetailedAttachment>(fk => fk.Id);
+            });
+
+    }
 }

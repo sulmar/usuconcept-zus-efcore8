@@ -26,7 +26,8 @@ var actors  = context.Actors.ToList();
 // Console.WriteLine(customersCount);
 
 // EF Core 8.0
-var customerInfos = context.Database.SqlQuery<CustomerInfo>($"EXEC uspGetCustomersInfo")
+FormattableString sql = $"EXEC uspGetCustomersInfo";
+var customerInfos = context.Database.SqlQuery<CustomerInfo>(sql)
     .ToList();
 
 

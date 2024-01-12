@@ -4,7 +4,7 @@ using TableSplitting.Model;
 
 Console.WriteLine("Hello, Table Splitting!");
 
-string connectionString = "Data Source=(local);Initial Catalog=TableSplittingDb;Integrated Security=True;TrustServerCertificate=True";
+string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=TableSplittingDb;Integrated Security=True;TrustServerCertificate=True";
 
 // dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 DbContextOptions dbContextOptions = new DbContextOptionsBuilder()
@@ -15,7 +15,7 @@ var context = new AppDbContext(dbContextOptions);
 
 context.Database.EnsureCreated();
 
-await SeedDataAsync(context);
+// await SeedDataAsync(context);
 
 var query = context.Attachments.Select(a => new AttachmentInfo
 {
@@ -33,10 +33,16 @@ foreach (var attachment in attachments)
     Console.WriteLine(attachment.Title);
 }
 
-var selectedAttachment = await context.Attachments
+var selected = attachments.First();
+
+// Explicit Loading
+context.Entry(selected).Reference(e => e.DetailedAttachment).Load();
+
+// Eager Loading
+var selectedAttachment = await context.Attachments.Include(a => a.DetailedAttachment)
     .FirstAsync();
 
-Console.WriteLine(selectedAttachment.Content.Length);
+Console.WriteLine(selectedAttachment.DetailedAttachment.Content.Length);
 
 
 
@@ -49,8 +55,12 @@ static async Task SeedDataAsync(AppDbContext context)
             Title = "Lorem",
             ContentType = "application/pdf",
             Description = "Lorem ipsum",
-            Filename = "file1.pdf",
-            Content = Enumerable.Repeat((byte)1, 1_000_000).ToArray()
+            DetailedAttachment = new DetailedAttachment
+            {
+                Filename = "file1.pdf",
+                ContentType = "application/pdf",
+                Content = Enumerable.Repeat((byte)1, 100_000).ToArray()
+            }
         };
 
         await context.Attachments.AddAsync(attachment);

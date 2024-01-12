@@ -17,17 +17,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseFirst", "DatabaseFi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EagerLoading", "EagerLoading\EagerLoading.csproj", "{652B8636-6A55-482A-9879-690234FDE09B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExplicitLoading", "ExplicitLoading\ExplicitLoading.csproj", "{C8CDCB08-17BB-49E9-A09E-EDD0B39940C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExplicitLoading", "ExplicitLoading\ExplicitLoading.csproj", "{C8CDCB08-17BB-49E9-A09E-EDD0B39940C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transactions", "Transactions\Transactions.csproj", "{4FF76FEB-C749-4432-8F7A-40F5B01DCC9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transactions", "Transactions\Transactions.csproj", "{4FF76FEB-C749-4432-8F7A-40F5B01DCC9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Concurrency", "Concurrency\Concurrency.csproj", "{B7457D12-4BD4-4066-ADFF-6C98BEE7595F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Concurrency", "Concurrency\Concurrency.csproj", "{B7457D12-4BD4-4066-ADFF-6C98BEE7595F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conventions", "Conventions\Conventions.csproj", "{BFC772AF-1BE9-4EA2-A498-6C1C98DBB7DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Conventions", "Conventions\Conventions.csproj", "{BFC772AF-1BE9-4EA2-A498-6C1C98DBB7DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Converters", "Converters\Converters.csproj", "{1CD80E55-502D-4F36-A431-14D9B0996C1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Converters", "Converters\Converters.csproj", "{1CD80E55-502D-4F36-A431-14D9B0996C1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalFilters", "GlobalFilters\GlobalFilters.csproj", "{CEF1AB17-CA1B-4872-A548-F5F6724A0A9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GlobalFilters", "GlobalFilters\GlobalFilters.csproj", "{CEF1AB17-CA1B-4872-A548-F5F6724A0A9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitQuery", "SplitQuery\SplitQuery.csproj", "{FC559542-2132-4147-ABC2-891F8F063CCB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,10 @@ Global
 		{CEF1AB17-CA1B-4872-A548-F5F6724A0A9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEF1AB17-CA1B-4872-A548-F5F6724A0A9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEF1AB17-CA1B-4872-A548-F5F6724A0A9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC559542-2132-4147-ABC2-891F8F063CCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC559542-2132-4147-ABC2-891F8F063CCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC559542-2132-4147-ABC2-891F8F063CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC559542-2132-4147-ABC2-891F8F063CCB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
