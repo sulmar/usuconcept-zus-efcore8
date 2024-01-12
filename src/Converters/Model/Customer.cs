@@ -1,29 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using Converters.Model;
 
 namespace Infrastructure;
 
-public partial class Staff
+public partial class Customer
 {
-    public byte StaffId { get; set; }
+    public int CustomerId { get; set; }
+
+    public int StoreId { get; set; }
 
     public string FirstName { get; set; } = null!;
 
     public string LastName { get; set; } = null!;
 
-    public int AddressId { get; set; }
-
-    public byte[]? Picture { get; set; }
-
     public string? Email { get; set; }
 
-    public int StoreId { get; set; }
+    public int AddressId { get; set; }
 
     public bool Active { get; set; }
 
-    public string Username { get; set; } = null!;
-
-    public string? Password { get; set; }
+    public DateTime CreateDate { get; set; }
 
     public DateTime LastUpdate { get; set; }
 
@@ -34,6 +31,4 @@ public partial class Staff
     public virtual ICollection<Rental> Rentals { get; set; } = new List<Rental>();
 
     public virtual Store Store { get; set; } = null!;
-
-    public virtual Store? StoreNavigation { get; set; }
 }

@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Infrastructure;
+namespace Converters.Model;
 
-public partial class FilmActor
+public partial class FilmCategory
 {
-    public int ActorId { get; set; }
-
     public int FilmId { get; set; }
+
+    public byte CategoryId { get; set; }
 
     public DateTime LastUpdate { get; set; }
 
-    public virtual Actor Actor { get; set; } = null!;
+    public virtual Category Category { get; set; } = null!;
 
     public virtual Film Film { get; set; } = null!;
 }

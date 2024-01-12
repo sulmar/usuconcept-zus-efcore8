@@ -25,12 +25,37 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 }
 ~~~
 
-## Konwersja Bool na String
+## Konwersja Bool na varchar
+
+
 ~~~ csharp              
             builder.Property(p=>p.IsDeleted)
                 .HasConversion(new BoolToStringConverter("Yes", "No"));
 ~~~
 
+## Konwersja Bool na char
+
+~~~ csharp
+  var converter = new BoolToTwoValuesConverter<char>('0', '1');
+
+  modelBuilder.Entity<Customer>()
+      .Property(p => p.Active)
+      .HasColumnType("char(1)")
+      .HasConversion(converter);
+~~~
+
+Można również utworzyć własną klasę konwertera:
+~~~ csharp
+ public class BoolToCharConverter : ValueConverter<bool, char>
+ {
+     public BoolToCharConverter(char falseValue, char trueValue) : base(
+         v => v ? trueValue : falseValue,   // Convert from bool to char
+         v => v == trueValue         // Convert from char to bool
+     )
+     { }
+ }
+ ~~~ 
+ 
 # Własny konwerter
 
 ## Konwersja za pomocą wyrażeń 

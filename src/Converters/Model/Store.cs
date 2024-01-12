@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using Infrastructure;
 
-namespace Infrastructure;
+namespace Converters.Model;
 
 public partial class Store
 {

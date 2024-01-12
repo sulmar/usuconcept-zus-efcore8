@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Converters.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
@@ -65,14 +66,7 @@ public partial class SakilaContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // TODO:
-        // Napisać BoolToCharConverter
-
-        var converter = new BoolToStringConverter("0", "1");
-
-        modelBuilder.Entity<Customer>()
-            .Property(p => p.Active)
-            .HasConversion(converter);
+      
 
         modelBuilder.Entity<Actor>(entity =>
         {
@@ -226,12 +220,7 @@ public partial class SakilaContext : DbContext
             entity.HasIndex(e => e.LastName, "idx_last_name");
 
             entity.Property(e => e.CustomerId).HasColumnName("customer_id");
-            entity.Property(e => e.Active)
-                .HasMaxLength(1)
-                .IsUnicode(false)
-                .HasDefaultValue("Y")
-                .IsFixedLength()
-                .HasColumnName("active");
+          
             entity.Property(e => e.AddressId).HasColumnName("address_id");
             entity.Property(e => e.CreateDate)
                 .HasDefaultValueSql("(getdate())")

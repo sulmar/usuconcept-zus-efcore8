@@ -7,8 +7,6 @@ Console.WriteLine("Hello, SQL!");
 
 var context = new SakilaContext();
 
-// TODO: SQL "SELECT * FROM customer"
-
 var sql = "SELECT * FROM customer";
 var customers = context.Customers.FromSqlRaw(sql);
 

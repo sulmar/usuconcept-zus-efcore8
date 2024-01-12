@@ -5,7 +5,6 @@ Console.WriteLine("Hello, Global Filters!");
 
 using var context = new SakilaContext();
 
-// TODO: Move to global filters
 var activeCustomers = context.Customers    
     .ToList();
 
