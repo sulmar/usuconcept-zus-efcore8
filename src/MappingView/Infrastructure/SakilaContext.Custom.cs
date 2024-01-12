@@ -12,6 +12,10 @@ public partial class SakilaContext : DbContext
         modelBuilder.Entity<FilmsByRating>()
             .ToView("FilmsByRating")
             .HasNoKey();
-            
+
+        modelBuilder.Entity<FilmsByRating>().
+            Property(e => e.FilmCount)
+            .HasColumnName("film_count");
+
     }
 }

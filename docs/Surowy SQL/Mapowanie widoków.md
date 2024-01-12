@@ -1,7 +1,7 @@
 Entity Framework Core umożliwia mapowanie na encje nie tylko tabel, ale również widoków.
-## Database First
 
-Utwórz widok
+
+1. Przygotuj widok
 ~~~ sql
 CREATE OR ALTER VIEW FilmsByRating AS
 SELECT 
@@ -13,20 +13,19 @@ GROUP BY
 	rating
 ~~~
 
-Zdefiniuj model:
+2. Zdefiniuj model:
 
 ~~~ csharp
 public class FilmsByRating
 {  
 	public int Rating { get; set; }  	
-	[Column("film_count")]  
 	public int TotalAmount { get; set; }
    
     public override string ToString() => $"{Rating} {TotalAmount}";
 }
 ~~~
 
-Dodaj do modelu encję:
+Dodaj do kontekstu encję:
 
 ~~~ csharp
 public DbSet<FilmsByRating> FilmsByRatings { get; set; }
@@ -40,15 +39,17 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 		.Entity<FilmsByRating>()  
 		.ToView("FilmsByRating")
 	    .HasNoKey();		
+
+     modelBuilder
+        .Entity<FilmsByRating>()
+        .Property(e => e.FilmCount)
+       .HasColumnName("film_count");
 }
 ~~~
 
 uwaga: jeśli twoja encja nie zawiera klucza zastosuj metodę `HasNoKey`.
-## Code First
 
-W przypadku podejścia _Code First_ należy widok dodać poprzez migrację.
-
-1. Dodaj migrację:
+3. Dodaj migrację:
 ~~~ bash 
 Add-Migration FilmsByRatingView
 ~~~
@@ -66,7 +67,7 @@ public partial class FilmsByRatingView : Migration
 }
 ~~~
 
-2. Przenieś kod do tworzenia widoku do migracji:
+4. Przenieś kod do tworzenia widoku do migracji:
 ~~~ csharp
 public partial class FilmsByRatingView : Migration  
 {  
@@ -81,20 +82,14 @@ public partial class FilmsByRatingView : Migration
 }
 ~~~
 
-3. Zaktualizuj bazę danych:
+5. Zaktualizuj bazę danych:
 ~~~ bash
 update-database
 ~~~
 
-
-
-# Mapowanie funkcji
-
+6. Pobierz dane z widoku
 ~~~ csharp
-public DbSet<ExpenseByTotal> ExpenseTotals { get; set; }
-
-modelBuilder  
-	.Entity<ExpenseByTotal>()  
-	.ToFunction("expensebyyear(2024)")  
-	.HasKey(t => t.Id);  
+using var context = new SakilaContext();
+var filmsByRatings = context.FilmsByRatings.ToList();
 ~~~
+
