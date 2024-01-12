@@ -63,6 +63,10 @@ public partial class SakilaContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        // modelBuilder.Entity<Actor>()
+          //    .ToFunction("f_GetActors(2000)");
+        //    .ToView("vw_GetActors");
+
         modelBuilder.Entity<Actor>(entity =>
         {
             entity.HasKey(e => e.ActorId)

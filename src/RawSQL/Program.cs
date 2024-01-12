@@ -7,7 +7,19 @@ Console.WriteLine("Hello, SQL!");
 
 var context = new SakilaContext();
 
-// TODO: SQL "SELECT * FROM Customer"
+// TODO: SQL "SELECT * FROM customer"
+
+var sql = "SELECT * FROM customer";
+var customers = context.Customers.FromSqlRaw(sql);
+
+FormattableString sql2 = $"SELECT * FROM customer";
+customers = context.Customers.FromSql(sql2);
+
+
+/*
+ modelBuilder.Entity<Actor>()
+            .ToView("vw_GetActors");
+*/
 
 
 // TODO: SQL "SELECT COUNT(*) FROM Customer"
