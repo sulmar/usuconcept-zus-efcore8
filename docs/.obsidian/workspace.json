@@ -1,0 +1,178 @@
+{
+  "main": {
+    "id": "e5dfc9dfe9b9e92e",
+    "type": "split",
+    "children": [
+      {
+        "id": "d6a5f264228629ab",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ad73aa46f6140adb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Konkurencyjność.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ba0e3887e310e966",
+    "type": "split",
+    "children": [
+      {
+        "id": "64e5c31dcd15cb2a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1d381cbe0332b3ac",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "b3cacf5789d3411f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "bf9d10d2f0c0f825",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "88d1d7c80ff96244",
+    "type": "split",
+    "children": [
+      {
+        "id": "36cedf006e97f388",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0e6f12b645bf7ab7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Konkurencyjność.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "53dfe410bc124989",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Konkurencyjność.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "56d352ed1160758e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "96cf457f91f448f7",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Konkurencyjność.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Otwórz okno szybkiej zmiany pliku": false,
+      "graph:Otwórz graf": false,
+      "canvas:Stwórz nowe płótno": false,
+      "daily-notes:Otwórz dzisiejszą notatkę": false,
+      "templates:Wstaw szablon": false,
+      "command-palette:Otwórz paletę poleceń": false
+    }
+  },
+  "active": "ad73aa46f6140adb",
+  "lastOpenFiles": [
+    "Shadow Property.md",
+    "Konkurencyjność.md",
+    "Filtry globalne.md",
+    "Diagnostyka.md",
+    "Database First.md",
+    "Code First.md",
+    "Surowy SQL/SqlQuery.md",
+    "Surowy SQL/Mapowanie widoków.md",
+    "Bez nazwy.md",
+    "Surowy SQL/FromSql.md",
+    "Polecenia.md",
+    "Pamięć podręczna.md",
+    "Masowe aktualizacje.md",
+    "Optymalizacja.md",
+    "Optymalizacja/Dzielenie zapytań.md",
+    "Ładowanie powiązanych encji/Zachłanne ładowanie.md",
+    "Ładowanie powiązanych encji/Leniwe Ładowanie (Lazy Loading).md",
+    "Ładowanie powiązanych encji/Jawne ładowanie danych.md",
+    "Śledzenie zmian.md",
+    "Stany encji.md",
+    "Konwertery.md",
+    "Transakcje.md",
+    "Konwencje.md",
+    "Optymalizacja",
+    "Surowy SQL",
+    "Ładowanie powiązanych encji"
+  ]
+}
