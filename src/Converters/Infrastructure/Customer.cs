@@ -17,7 +17,7 @@ public partial class Customer
 
     public int AddressId { get; set; }
 
-    public string Active { get; set; } = null!;
+    public bool Active { get; set; }
 
     public DateTime CreateDate { get; set; }
 

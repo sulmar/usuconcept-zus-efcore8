@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Infrastructure;
 
@@ -64,6 +65,15 @@ public partial class SakilaContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        // TODO:
+        // Napisać BoolToCharConverter
+
+        var converter = new BoolToStringConverter("0", "1");
+
+        modelBuilder.Entity<Customer>()
+            .Property(p => p.Active)
+            .HasConversion(converter);
+
         modelBuilder.Entity<Actor>(entity =>
         {
             entity.HasKey(e => e.ActorId)
