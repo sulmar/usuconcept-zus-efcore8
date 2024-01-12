@@ -5,15 +5,29 @@ Console.WriteLine("Hello, Concurrency!");
 
 using var context = new SakilaContext();
 
-var customer = context.Customers.Find(1);
-customer.Email = "a@domain.com";
+try
+{
+    var customer = context.Customers.Find(1);
+    customer.Email = "a@domain.com";
+    customer.LastName = "Test";
 
-// simulate a concurrency conflict
-context.Database.ExecuteSqlRaw(
-    "UPDATE dbo.customer SET email = 'b@domain.com' WHERE customer_id = 1");
+    Console.WriteLine($"{context.Entry(customer).Property(p => p.Email).OriginalValue}");
 
-context.Customers.Add(new Customer { FirstName = "b", LastName = "b" });
 
-// Attempt to save changes to the database
-context.SaveChanges();
+    // simulate a concurrency conflict
+    context.Database.ExecuteSqlRaw(
+        "UPDATE dbo.customer SET email = 'b@domain.com' WHERE customer_id = 1");
 
+    // Attempt to save changes to the database
+    context.SaveChanges();
+
+}
+catch(Exception e )
+{
+
+}
+
+/*
+ ALTER TABLE customer
+	ADD [Version] ROWVERSION
+*/
