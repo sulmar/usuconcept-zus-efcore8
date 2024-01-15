@@ -37,7 +37,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BatchUpdate", "BatchUpdate\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShadowProperty", "ShadowProperty\ShadowProperty.csproj", "{960ABA74-FE1E-43A2-8CB9-857C21F28C27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MappingView", "MappingView\MappingView.csproj", "{99A533BF-F974-427A-B2CC-AFACB9243EF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MappingView", "MappingView\MappingView.csproj", "{99A533BF-F974-427A-B2CC-AFACB9243EF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueriesWithPrimitiveCollections", "QueriesWithPrimitiveCollections\QueriesWithPrimitiveCollections.csproj", "{65B412FD-20B8-499E-9EB3-468646567802}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +119,10 @@ Global
 		{99A533BF-F974-427A-B2CC-AFACB9243EF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99A533BF-F974-427A-B2CC-AFACB9243EF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99A533BF-F974-427A-B2CC-AFACB9243EF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65B412FD-20B8-499E-9EB3-468646567802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65B412FD-20B8-499E-9EB3-468646567802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65B412FD-20B8-499E-9EB3-468646567802}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65B412FD-20B8-499E-9EB3-468646567802}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
