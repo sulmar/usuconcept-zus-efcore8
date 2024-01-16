@@ -5,7 +5,8 @@ Przydatne w wielu scenariuszach:
 - pola metadanych (DateCreated, LastUpdated lub rowversion).
 - brak dostępu do kodu źródłowego modelu
 
-## Konfiguracja
+## Konfiguracja pojedynczej encji
+Za pomocą konfiguracji możemy dodać obsługę kolumnę bez potrzeby dodawania jej do modelu:
 
 ~~~ csharp
 protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -18,6 +19,19 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
 https://www.learnentityframeworkcore.com/model/shadow-properties
 
+## Konfiguracja wielu encji
+
+Istnieje również możliwość dodania kolumny do wszystkich encji:
+```csharp
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+  foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+    {
+        modelBuilder.Entity(entityType.ClrType)
+            .Property<DateTime>("LastUpdated");
+    }
+}
+```
 ## Ustawianie wartości Shadow Properties 
 
 - Ręczne ustawianie wartości
